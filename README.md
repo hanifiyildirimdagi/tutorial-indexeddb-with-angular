@@ -1,5 +1,10 @@
 # TutorialIndexedDb
 
+This is a tutorial project on hosting data in the browser using "IndexedDb". There are examples of Todo App and Random Data Plot display.
+
+## Demo:
+You can examine it live at [Live Demo](https://indexed-db-with-angular.tutorial.hanifiyildirimdagi.com/).
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
 ## Development server
