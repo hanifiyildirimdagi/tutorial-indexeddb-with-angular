@@ -1,0 +1,33 @@
+<div class="col d-flex flex-column align-items-center bg-light p-5">
+  <div class="col-12 col-md-4">
+    <div
+      class="w-100 d-flex align-items-center justify-content-between bg-white px-2 mb-2 rounded-sm border"
+      *ngFor="let item of List"
+    >
+      <mat-checkbox
+        [(ngModel)]="item.checked"
+        (ngModelChange)="ChangeCheck($event, item)"
+        >{{ item.name }}</mat-checkbox
+      >
+      <button
+        mat-icon-button
+        color="warn"
+        class="ml-auto"
+        aria-label="Example icon button with a home icon"
+        (click)="Delete(item.id)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+    <ngb-alert *ngIf="List.length == 0" [dismissible]="false"><strong>Whoa!</strong> Start Add.. </ngb-alert>
+  </div>
+  <div
+    class="col-12 col-md-4 d-flex flex-column align-items-center border-top p-4 mt-3"
+  >
+    <mat-form-field class="w-100">
+      <mat-label>Task</mat-label>
+      <input matInput placeholder="Make a call" [(ngModel)]="TaskName" />
+    </mat-form-field>
+    <button mat-raised-button (click)="Save()" class="rounded-pill btn-lg">Add to List</button>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="col d-flex flex-column align-items-center p-5">
+  <plotly-plot
+    *ngIf="plotItems.length > 0"
+    [data]="graph.data"
+    [layout]="graph.layout"
+  ></plotly-plot>
+  <div class="d-flex flex-column">
+    <div class="w-100 d-flex justfiy-content-center">
+      <button mat-fab color="warn" (click)="Clear()">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-fab color="dark" (click)="Get()">
+        <mat-icon>sync</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="col-12 col-md-4 p-3 bg-light mt-3 d-flex flex-wrap">
+    <div class="col-6 px-2">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Count</mat-label>
+        <input matInput placeholder="Insert Count" [(ngModel)]="AddCount" />
+      </mat-form-field>
+    </div>
+    <div class="col-6 px-2">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Group</mat-label>
+        <mat-select [(ngModel)]="AddGroup">
+          <mat-option [value]="0">Group 1</mat-option>
+          <mat-option [value]="1">Group 1-2</mat-option>
+          <mat-option [value]="2">Group 1-2-3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-6 col-md-3 px-2">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>X Min</mat-label>
+        <input matInput placeholder="Insert Count" [(ngModel)]="XMin" />
+      </mat-form-field>
+    </div>
+    <div class="col-6 col-md-3 px-2">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>X Max</mat-label>
+        <input matInput placeholder="Insert Count" [(ngModel)]="XMax" />
+      </mat-form-field>
+    </div>
+    <div class="col-6 col-md-3 px-2">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Y Min</mat-label>
+        <input matInput placeholder="Insert Count" [(ngModel)]="Ymin" />
+      </mat-form-field>
+    </div>
+    <div class="col-6 col-md-3 px-2">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Y Max</mat-label>
+        <input matInput placeholder="Insert Count" [(ngModel)]="YMax" />
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" class="w-100" (click)="Push()">
+      <mat-icon>upload</mat-icon>
+      <span>Add</span>
+    </button>
+  </div>
+</div>
